@@ -1,13 +1,13 @@
 
 get '/' do
   logged_in = true #Test toggle
-  if logged_in
-  #Logged in home page
-    erb :index
-  else
+  # if logged_in
+  # #Logged in home page
+  #   erb :index
+  # else
   #Prior to logging in splash page
     erb :login
-  end
+  # end
 end
 
 post '/users' do
