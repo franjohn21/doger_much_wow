@@ -10,9 +10,9 @@ WOW: <input type="text" name="WOW" maxlength="141"><br>
 =======
 <div class="container">
 
- <h4> Logged in as: </h4>
+ <h4> Logged in as: <%=@user.username%></h4>
 <form action='/logout' method='POST'>
-<input type="submit" value="Log out">
+<input class="logout" type="submit" value="Log out">
 </form><br>
 
  <!-- should have an @user -->
