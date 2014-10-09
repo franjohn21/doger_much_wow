@@ -1,7 +1,12 @@
 enable :sessions
 
 get '/' do
-  erb session[:user_id] ? :index : :login
+  if session[:user_id]
+    @user = User.find(session[:user_id])
+    erb :index
+  else
+    erb :login
+  end
 end
 
 post '/login' do
