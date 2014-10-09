@@ -1,19 +1,33 @@
+enable :sessions
 
 get '/' do
   logged_in = true #Test toggle
-  # if logged_in
-  # #Logged in home page
-  #   erb :index
-  # else
-  #Prior to logging in splash page
+  if logged_in
+  #Logged in home page
+    erb :index
+  else
+  Prior to logging in splash page
     erb :login
-  # end
+  end
+  erb session[:user_id] ? :index : :login
 end
 
-post '/users' do
-  #Add validation, setup session
-  #and store session[:user_id]
-  user = User.find(params[:id])
+post '/login' do
+  user = User.find(params[:username])
+  if user && params[:password] == user.password_hash
+    session[:user_id] = user.id
+    @username = user.username
+  else
+    @errors = "Try again"
+  end
+  redirect '/'
+end
+
+post '/signup' do
+end
+
+post '/logout' do
+  session.clear
   redirect '/'
 end
 
