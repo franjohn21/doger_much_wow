@@ -5,10 +5,9 @@ get '/' do
 end
 
 post '/login' do
-  user = User.find_by(username: params[:username])
-  if user && params[:password] == user.password_hash
-    session[:user_id] = user.id
-    @username = user.username
+  @user = User.find_by(username: params[:username])
+  if @user && params[:password] == @user.password_hash
+    session[:user_id] = @user.id
   else
     @errors = "Try again"
   end
@@ -16,10 +15,9 @@ post '/login' do
 end
 
 post '/signup' do
-  user = User.create(params)
-  if user.valid?
-    session[:user_id] = user.id
-    @username = user.username
+  @user = User.create(params)
+  if @user.valid?
+    session[:user_id] = @user.id
   else
     @errors = "Much try again"
   end

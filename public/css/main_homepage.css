@@ -1,0 +1,7 @@
+body{
+  text-align:center;
+}
+.container{
+  disply:inline-block;
+  margin:10px auto;
+}
