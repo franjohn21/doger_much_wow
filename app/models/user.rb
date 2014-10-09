@@ -3,5 +3,9 @@ class User < ActiveRecord::Base
   validates_presence_of :username
 
   has_many :doges
-  
+
+  def feed
+    self.doges
+  end
+
 end
