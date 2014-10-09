@@ -1,14 +1,6 @@
 enable :sessions
 
 get '/' do
-  logged_in = true #Test toggle
-  if logged_in
-  #Logged in home page
-    erb :index
-  else
-  Prior to logging in splash page
-    erb :login
-  end
   erb session[:user_id] ? :index : :login
 end
 
