@@ -16,6 +16,14 @@ post '/login' do
 end
 
 post '/signup' do
+  user = User.create(params)
+  if user.valid?
+    session[:user_id] = user.id
+    @username = user.username
+  else
+    @errors = "Much try again"
+  end
+  redirect '/'
 end
 
 post '/logout' do
@@ -24,22 +32,29 @@ post '/logout' do
 end
 
 get '/users/:username' do
+  @user = User.find_by(username: params[:username])
+  @doges = @user.doges
   erb :show
 end
 
 post '/doge' do
-  # params[:content]
-  # session[:user_id]
-  # Create new Tweet with content, user_id
-  # Redirect to forms' current page
+  Doge.create(content: params[:content], user_id: session[:user_id])
+  redirect '/'
+  #*** Stretch goal: Redirect to forms' current page
 end
 
 get '/users/:username/status/:id' do
-  #@doge = Doge.find(params[:id])
+  @doge = Doge.find(params[:id])
+  @user = User.find_by(username: params[:username])
   erb :doge_show
 end
 
-delete '/doge' do
-  #bad_doge = Doge.destroy(params[:id])
+delete '/users/:username/status/:id' do
+  user = User.find(session[:user_id])
+  if user.username == params[:username]
+    Doge.destroy(params[:id])
+  else
+    @errors = "No such doge deletion for you!"
+  end
   redirect '/'
 end
