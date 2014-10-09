@@ -15,13 +15,15 @@ post '/login' do
   redirect '/'
 end
 
-post '/signup' do
-end
+# post '/signup' do
+#   redirect '/'
+# end
 
 post '/logout' do
   session.clear
   redirect '/'
 end
+
 
 get '/users/:username' do
   erb :show
