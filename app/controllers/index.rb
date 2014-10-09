@@ -5,7 +5,7 @@ get '/' do
 end
 
 post '/login' do
-  user = User.find(params[:username])
+  user = User.find_by(username: params[:username])
   if user && params[:password] == user.password_hash
     session[:user_id] = user.id
     @username = user.username
