@@ -1,9 +1,10 @@
+<div class="background">
 <h2>WOW.  VERY WELCOME.  MUCH LOGIN.  WOW.</h2>
 <form action='/login' method='POST'>
 Username: <input type="text" name="username"><br>
 Password: <input type="password" name="password">
 
-<input type="submit" value="Log in"
+<input type="submit" value="Log in">
 <% if @errors %>
 <h3><%= @errors%></h3>
 <% end %>
@@ -13,5 +14,6 @@ Password: <input type="password" name="password">
 <form action='/signup' method='POST'>
 Username: <input type="text" name="username"><br>
 Password: <input type="password" name="password_hash">
-<input type="submit" value="Sign up"
+<input type="submit" value="Sign up">
 </form><br>
+</div>

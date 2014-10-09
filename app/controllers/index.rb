@@ -15,11 +15,6 @@ post '/login' do
   redirect '/'
 end
 
-<<<<<<< HEAD
-post '/signup' do
-  redirect '/'
-end
-=======
 post '/signup' do
   user = User.create(params)
   if user.valid?
@@ -30,7 +25,6 @@ post '/signup' do
   end
   redirect '/'
 end
->>>>>>> 1bd0cb0f6584aca195e59a255c40f8e87f2236bc
 
 post '/logout' do
   session.clear
