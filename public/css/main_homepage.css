@@ -13,6 +13,11 @@ body{
   padding:5px;
 }
 
+.home-button{
+  float: left;
+
+}
+
 .nav{
   position:fixed;
   top:0px;
