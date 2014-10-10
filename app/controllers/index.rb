@@ -1,3 +1,4 @@
+
 enable :sessions
 
 get '/' do
@@ -45,6 +46,13 @@ post '/doge' do
   Doge.create(content: params[:content], user_id: session[:user_id])
   redirect '/'
   #*** Stretch goal: Redirect to forms' current page
+end
+
+post '/very_wow' do
+  user = User.find(session[:user_id])
+  doge = Doge.find(params[:doge])
+  user.very_wows << doge
+  redirect '/'
 end
 
 get '/users/:username/status/:id' do

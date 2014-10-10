@@ -1,37 +1,87 @@
 body{
   text-align:center;
+  font-size:20px;
+  background-color:gainsboro;
 }
 
 .about_me{
+  margin-top:100px;
+  margin-left:20px;
   float:left;
+  background-color:#eee;
+  border-radius:10px;
+  padding:5px;
 }
 
 .nav{
-  display: inline-block;
-  margin: 10px auto;
-  float: right;
+  position:fixed;
+  top:0px;
+  min-height:40px;
+  width:100%;
+  background-color:black;
 }
 
 .feed ul{
   list-style: none;
-  padding: 0px
+  padding: 0px;
+  margin: 0px;
 }
-
+.black{
+  color:black;
+}
+.bigger{
+  font-size:22px;
+}
+.opaque{
+  opacity:0.7;
+  font-size:70%;
+}
 a{
   text-decoration: none;
   color: black;
 }
 a:hover{
 }
+
+.btn-very_wow{
+  margin:0px;
+  padding:0px;
+  border:none;
+  float:right;
+  background-color:transparent;
+}
+
+.div-logout{
+  float:right;
+  padding-right:30px;
+  padding-top:5px;
+}
 .user-page{
   color:orange;
+}
+.button{
+  background-color:white;
+  color:#eab92d;
+  margin-top:2px;
+  border-radius:10px;
+  font-size:15px;
+  transition: all 0.2s;
+  padding:7px;
+  border:outset #eab92d 2px;
+}
+.button:hover{
+ background-color:black;
+  color:white;
+}
+.button:active{
+  border:inset #eab92d 1px;
 }
 .user-page:hover{
   color:gold;
 }
 .home-doges{
-  width:100%;
-
+  width:90%;
+  text-align:left;
   border:1px solid #cb9b14; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px;font-size:12px;font-family:arial, helvetica, sans-serif; padding: 10px 10px 10px 10px; text-decoration:none; display:inline-block;text-shadow: -1px -1px 0 rgba(0,0,0,0.3);font-weight:bold; color: #FFFFFF;
   background-color: #eab92d; background-image: -webkit-gradient(linear, left top, left bottom, from(#eab92d), to(#c79810));
   background-image: -webkit-linear-gradient(top, #eab92d, #c79810);
@@ -40,12 +90,20 @@ a:hover{
   background-image: -o-linear-gradient(top, #eab92d, #c79810);
   background-image: linear-gradient(to bottom, #eab92d, #c79810);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#eab92d, endColorstr=#c79810);
   transition: all 0.2s;
-  padding-left:0px;
-  padding-right: 0px;
+  padding:0px;
+  padding-top:10px;
+  padding-left:2px;
+  border:solid black 1px;
+  font-size:16px;
+
 
 }
+.right{
+  float:right;
+  padding-right:30px;
+}
 .home-doges:hover{
-  width: 120%;
+  width: 100%;
   border:1px solid #a17b10;
   background-color: #cf9f15; background-image: -webkit-gradient(linear, left top, left bottom, from(#cf9f15), to(#98740c));
   background-image: -webkit-linear-gradient(top, #cf9f15, #98740c);
@@ -55,14 +113,25 @@ a:hover{
   background-image: linear-gradient(to bottom, #cf9f15, #98740c);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#cf9f15, endColorstr=#98740c);
 
 }
+i:hover{
+  color:black;
+}
+i:active{
+  color:#3F3F3F;
+}
 
 .feed{
   display: inline-block;
+  background-color:#eee;
+  border-radius:10px;
+  width:500px;
+  border:none;
+  margin-top:100px;
+  box-shadow:0px 0px 5px #3F3F3F;
+  padding-bottom:10px;
 }
 
-section{
-  border: dotted red 1px;
-}
+
 
 .clearfix:after {
  content: ".";
