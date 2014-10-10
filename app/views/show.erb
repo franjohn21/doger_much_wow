@@ -5,13 +5,19 @@
 </section>
 
 <section class="feed clearfix">
-  <h4>Doges</h4>
-  <% @user.feed.each do |doge| %>
+  <h4>Wows</h4>
+  <% (@user.doges + @user.very_wows).each do |doge| %>
   <ul>
-   <a  href="/users/<%=@user.username%>/status/<%=doge.id%>"> <li class="home-doges"><%= doge.content %> <br><%= doge.created_at %></li></a>
- </ul>
- <% end %>
-</section>
+   <a href="/users/<%= @user.username %>/status/<%=doge.id%>"><li class="home-doges"><span class="black bigger"><%= @user.username %></span> <br><%= doge.content %> <br><span class="opaque"><hr class="opaque"><span class="black center"><%= doge.created_at %> </span>
+        <form class="right" action="/very_wow" method="post">
+          <input type="hidden" name="doge" value="<%= doge.id  %>">
+          <button class="btn-very_wow" type="submit"><i class="fa fa-retweet bigger"></button></i>
+        </form>
+      </span></li>
+    </a>
+    </ul>
+    <% end %>
+  </section>
 
 <section class="nav clearfix">
   <div class="div-logout">
