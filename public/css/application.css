@@ -5,7 +5,7 @@
   background-attachment:fixed;
   background-position:center;
   -webkit-animation: enlarge 3s, shrink 3s 3s;
-  animation: enlarge 3s ease-in, shrink 3s 5s;
+  animation: enlarge 3s ease-in, shrink ease-out 3s 5s;
 
 }
 
