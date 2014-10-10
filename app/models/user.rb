@@ -3,6 +3,9 @@ class User < ActiveRecord::Base
   validates_presence_of :username
 
   has_many :doges
+  has_many :follows
+  has_many :followees, :through => :follows, :class_name => 'User'
+  has_many :followers, :through => :follows, :source => :user
 
   def feed
     self.doges

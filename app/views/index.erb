@@ -8,7 +8,7 @@
 </section>
 
 <section class="feed clearfix">
-  <h4>Doges</h4>
+  <h4>Wows</h4>
   <% @user.feed.each do |doge| %>
   <ul>
    <a  href="/users/<%=@user.username%>/status/<%=doge.id%>"> <li class="home-doges"><%= doge.content %> <br><hr><%= doge.created_at %></li></a>
