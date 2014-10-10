@@ -5,7 +5,7 @@
 </section>
 
 <section class="feed clearfix">
-  <h4>Wows</h4>
+  <h4><%=@user.username %>'s Wows</h4>
   <% (@user.doges + @user.very_wows).each do |doge| %>
   <ul>
    <a href="/users/<%= @user.username %>/status/<%=doge.id%>"><li class="home-doges"><span class="black bigger"><%= @user.username %></span> <br><%= doge.content %> <br><span class="opaque"><hr class="opaque"><span class="black center"><%= doge.created_at %> </span>
