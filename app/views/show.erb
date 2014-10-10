@@ -1,9 +1,7 @@
 <section class="about_me clearfix">
  Logged in as: <a class="user-page" href="/users/<%=@user.username%>"><%=@user.username%>
- <form action='/doge' method='POST'>
-   <input type="text" name="content" placeholder="Much doge!"><br>
-   <input type="submit" value="So wow">
- </form><br>
+  <%= erb :_submit_wow %>
+
 </section>
 
 <section class="feed clearfix">

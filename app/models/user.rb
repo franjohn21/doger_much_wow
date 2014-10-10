@@ -11,7 +11,13 @@ class User < ActiveRecord::Base
   has_many :followers, :through => :follows, :source => :user
 
   def feed
-    self.doges
+    user_doges = self.doges
+    user_doges += self.very_wows
+    self.followees.each do |followee|
+      user_doges += followee.doges
+      user_doges += followee.very_wows
+    end
+    user_doges.sort_by{|doge| doge.created_at}.reverse
   end
 
 end
