@@ -1,0 +1,29 @@
+.background{
+  min-height:1000px;
+  top:0px;
+  background-image: url('../doge.svg');
+  background-attachment:fixed;
+  background-position:center;
+  -webkit-animation: enlarge 3s, shrink 3s 3s;
+  animation: enlarge 3s ease-in, shrink ease-out 3s 5s;
+
+}
+
+
+@-webkit-keyframes enlarge {
+    from {background-size: 20%;}
+    to {background-size:550%;}
+}
+@-webkit-keyframes shrink {
+    from {background-size: 550%;}
+    to {background-size:110%;}
+}
+/* Standard syntax */
+@keyframes enlarge {
+    from {background: 20%;}
+    to {background: 550%;}
+}
+@keyframes shrink {
+    from {background-size: 550%;}
+    to {background-size:100%;}
+}

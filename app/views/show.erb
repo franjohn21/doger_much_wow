@@ -1,0 +1,28 @@
+<section class="about_me clearfix">
+ Logged in as: <a class="user-page" href="/users/<%=@user.username%>"><%=@user.username%>
+  <%= erb :_submit_wow %>
+
+</section>
+
+<section class="feed clearfix">
+  <h4>Doges</h4>
+  <% @user.feed.each do |doge| %>
+  <ul>
+   <a  href="/users/<%=@user.username%>/status/<%=doge.id%>"> <li class="home-doges"><%= doge.content %> <br><%= doge.created_at %></li></a>
+ </ul>
+ <% end %>
+</section>
+
+<section class="nav clearfix">
+  <div class="div-logout">
+    <form action='/logout' method='POST'>
+      <input class="button" type="submit" value="Log out">
+    </form><br>
+  </div>
+  <div class="home-button">
+    <form action='/' method='Get'>
+      <button class="btn-very_wow" type="submit" value="Doge House" type="hidden"><i class="fa fa-home" style="color: gold; font-size: 3em"></i></button>
+    </form><br>
+  </div>
+</section>
+
