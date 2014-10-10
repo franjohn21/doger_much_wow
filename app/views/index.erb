@@ -1,24 +1,26 @@
-<div class="background">
-<h1>HOMEPAGE.  SO DOGES.  SEE POST.  WOW.</h1>
 
+<section class="about_me clearfix">
+  <h4> Logged in as: <a class="user-page" href="/users/<%=@user.username%>"><%=@user.username%></a></h4>
+ <form action='/doge' method='POST'>
+   <input type="text" name="content" placeholder="Much doge!"><br>
+   <input type="submit" value="So wow">
+ </form><br>
+</section>
 
- <form action='/' method='POST'>
-SUCH WOW: <br>
-<textarea rows="2" cols="20" wrap="hard" name="WOW" style="background-color:transparent; height: 75px; width: 400px;" maxlength="141">
-</textarea><br>
-=======<br>
+<section class="feed clearfix">
+  <h4>Doges</h4>
+  <% @user.feed.each do |doge| %>
+  <ul>
+   <a  href="/users/<%=@user.username%>/status/<%=doge.id%>"> <li class="home-doges"><%= doge.content %> <br><%= doge.created_at %></li></a>
+ </ul>
+ <% end %>
+</section>
 
-
-
-=======
-
- <h4> Logged in as: <%=@user.username%></h4>
-<form action='/logout' method='POST'>
-<input class="logout" type="submit" value="Log out">
-</form><br>
-
-
-=======
-</div>
-
+<section class="nav clearfix">
+  <div class="div-logout">
+    <form action='/logout' method='POST'>
+      <input class="logout" type="submit" value="Log out">
+    </form><br>
+  </div>
+</section>
 

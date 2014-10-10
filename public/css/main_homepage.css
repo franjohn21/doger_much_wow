@@ -1,7 +1,73 @@
 body{
   text-align:center;
 }
-.container{
-  disply:inline-block;
-  margin:10px auto;
+
+.about_me{
+  float:left;
+}
+
+.nav{
+  display: inline-block;
+  margin: 10px auto;
+  float: right;
+}
+
+.feed ul{
+  list-style: none;
+  padding: 0px
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+a:hover{
+}
+.user-page{
+  color:orange;
+}
+.user-page:hover{
+  color:gold;
+}
+.home-doges{
+  width:100%;
+
+  border:1px solid #cb9b14; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px;font-size:12px;font-family:arial, helvetica, sans-serif; padding: 10px 10px 10px 10px; text-decoration:none; display:inline-block;text-shadow: -1px -1px 0 rgba(0,0,0,0.3);font-weight:bold; color: #FFFFFF;
+  background-color: #eab92d; background-image: -webkit-gradient(linear, left top, left bottom, from(#eab92d), to(#c79810));
+  background-image: -webkit-linear-gradient(top, #eab92d, #c79810);
+  background-image: -moz-linear-gradient(top, #eab92d, #c79810);
+  background-image: -ms-linear-gradient(top, #eab92d, #c79810);
+  background-image: -o-linear-gradient(top, #eab92d, #c79810);
+  background-image: linear-gradient(to bottom, #eab92d, #c79810);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#eab92d, endColorstr=#c79810);
+  transition: all 0.2s;
+  padding-left:0px;
+  padding-right: 0px;
+
+}
+.home-doges:hover{
+  width: 120%;
+  border:1px solid #a17b10;
+  background-color: #cf9f15; background-image: -webkit-gradient(linear, left top, left bottom, from(#cf9f15), to(#98740c));
+  background-image: -webkit-linear-gradient(top, #cf9f15, #98740c);
+  background-image: -moz-linear-gradient(top, #cf9f15, #98740c);
+  background-image: -ms-linear-gradient(top, #cf9f15, #98740c);
+  background-image: -o-linear-gradient(top, #cf9f15, #98740c);
+  background-image: linear-gradient(to bottom, #cf9f15, #98740c);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#cf9f15, endColorstr=#98740c);
+
+}
+
+.feed{
+  display: inline-block;
+}
+
+section{
+  border: dotted red 1px;
+}
+
+.clearfix:after {
+ content: ".";
+ visibility: hidden;
+ display: block;
+ height: 0;
+ clear: both;
 }
