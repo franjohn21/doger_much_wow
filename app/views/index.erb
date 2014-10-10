@@ -11,7 +11,7 @@
   <h4>Doges</h4>
   <% @user.feed.each do |doge| %>
   <ul>
-   <a  href="/users/<%=@user.username%>/status/<%=doge.id%>"> <li class="home-doges"><%= doge.content %> <br><%= doge.created_at %></li></a>
+   <a  href="/users/<%=@user.username%>/status/<%=doge.id%>"> <li class="home-doges"><%= doge.content %> <br><hr><%= doge.created_at %></li></a>
  </ul>
  <% end %>
 </section>
