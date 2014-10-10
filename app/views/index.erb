@@ -10,21 +10,30 @@
   <% @user.feed.each do |doge| %>
   <ul>
     <% creator = User.find(doge.user_id).username%>
-   <a href="/users/<%= creator %>/status/<%=doge.id%>"> <li class="home-doges"><span class="black bigger"><b><%=creator %></b></span> <br><%= doge.content %> <br><span class="opaque"><hr class="opaque"><span class="black center"><%= doge.created_at %> </span>
-    <form class="right" action="/very_wow" method="post">
-    <input type="hidden" name="doge" value="<%= doge.id  %>">
-    <button class="btn-very_wow" type="submit"><i class="fa fa-retweet bigger"></button></i>
-    </form>
-    </span></li></a>
- </ul>
- <% end %>
-</section>
+   <a href="/users/<%= creator %>/status/<%=doge.id%>"><li class="home-doges"><span class="black bigger"><%= creator %></span> <br><%= doge.content %> <br><span class="opaque"><hr class="opaque"><span class="black center"><%= doge.created_at %> </span>
+        <form class="right" action="/very_wow" method="post">
+          <input type="hidden" name="doge" value="<%= doge.id  %>">
+          <button class="btn-very_wow" type="submit"><i class="fa fa-retweet bigger"></button></i>
+        </form>
+      </span></li>
+    </a>
+    </ul>
+    <% end %>
+  </section>
 
-<section class="nav clearfix">
-  <div class="div-logout">
-    <form action='/logout' method='POST'>
-      <input class="button" type="submit" value="Log out">
-    </form><br>
-  </div>
+<section class="followees">
+  <h4>Such <br> follows</h4>
+  <ul>
+  <% @user.followees.each do |followee| %>
+  <a href="/users/<%=followee.username%>" ><li class="home-doges" id="follows"><%= followee.username %></li></a>
+  </ul>
+  <% end %>
 </section>
+  <section class="nav clearfix">
+    <div class="div-logout">
+      <form action='/logout' method='POST'>
+        <input class="button" type="submit" value="Log out">
+      </form><br>
+    </div>
+  </section>
 
