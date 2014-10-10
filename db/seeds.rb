@@ -7,3 +7,4 @@ require 'faker'
     user.followees << User.create(username: Faker::Internet.user_name, password_hash: Faker::Internet.password)
   end
 end
+User.first.followees.create(username: Faker::Internet.user_name, password_hash: Faker::Internet.password)

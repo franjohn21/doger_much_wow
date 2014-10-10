@@ -1,0 +1,27 @@
+
+
+<section class="feed clearfix">
+  <h4>Such Wow</h4>
+  <ul>
+  <% @doge %>
+   <a > <li class="home-doges" style="font-size: 1.5em;"><%= @doge.content %> <br><%= @doge.created_at %></li></a>
+ </ul>
+
+</section>
+
+<section class="nav clearfix">
+  <div class="div-logout">
+    <form action='/logout' method='POST'>
+      <input class="button" type="submit" value="Log out">
+    </form><br>
+  </div>
+  <div class="home-button">
+    <form action='/' method='Get'>
+      <button class="btn-very_wow" type="submit" value="Doge House" type="hidden"><i class="fa fa-home" style="color: gold; font-size: 3em"></i></button>
+    </form><br>
+  </div>
+</section>
+
+
+
+
